@@ -1,0 +1,130 @@
+<html>
+<head>
+    <title>Simple Calculator</title>
+<style>
+    body{
+        background-color: rgba(0,0,0,0.6);
+        margin: 180px 630px;
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        border-radius: 20px;
+    }
+
+    .buttonAngka{
+        width: 50;
+        height: 50;
+        font-size: 25;
+        margin: 2;
+        cursor: pointer;
+        background: rgba(128, 128, 128, 0.5);
+        border: none;
+        outline:none;
+    }
+
+    .buttonAngka:hover{
+        background-color: rgba(128, 128, 128, 1);
+    }
+
+    .buttonClear{
+        width: 50;
+        height: 50;
+        font-size: 25;
+        margin: 2;
+        cursor: pointer;
+        background: rgba(255, 165, 0, 0.5);
+        border: none;
+        outline:none;
+    }
+
+    .buttonClear:hover{
+        background-color: rgba(255, 165, 0, 1);
+    }
+
+    .textview{
+        width: 217;
+        margin: 5;
+        font-size: 25;
+        padding: 5;
+        border: none;
+        color: black;
+        outline:none;
+    }
+
+    .main{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    html{
+        background: linear-gradient(to right, #e91e63, #3f51b5)
+    }
+
+</style>
+
+    <script>
+        function insert(bil){
+            document.form.textview.value = document.form.textview.value+bil
+        }
+
+        function samadengan(){
+            var bil = document.form.textview.value
+                if(bil){
+                    document.form.textview.value = eval(bil)
+                }
+        }
+
+        function bersihkan(){
+            document.form.textview.value = ""
+        }
+
+        function back(){
+            var bil = document.form.textview.value
+            document.form.textview.value = bil.substring(0,bil.length-1)
+        }
+    </script>
+
+</head>
+    <body>
+        <div class="bg"></div>
+        <div class="main">
+    <form name="form">
+        <input class="textview" name="textview" readonly>
+    </form>
+    <table>
+        <tr>
+            <td><input class ="buttonClear" type="button" value="C" onclick="bersihkan()"></td>
+            <td><input class ="buttonAngka" type="button" value="/" onclick="insert('/')"></td>
+            <td><input class ="buttonAngka" type="button" value="X" onclick="insert('*')"></td>
+            <td><input class ="buttonAngka" type="button" value="⌫" onclick="back()"></td>
+        </tr>
+        <tr>
+            <td><input class ="buttonAngka" type="button" value="7" onclick="insert(7)"></td>
+            <td><input class ="buttonAngka" type="button" value="8" onclick="insert(8)"></td>
+            <td><input class ="buttonAngka" type="button" value="9" onclick="insert(9)"></td>
+            <td><input class ="buttonAngka" type="button" value="-" onclick="insert('-')"></td>
+        </tr>
+        <tr>
+            <td><input class ="buttonAngka" type="button" value="4" onclick="insert(4)"></td>
+            <td><input class ="buttonAngka" type="button" value="5" onclick="insert(5)"></td>
+            <td><input class ="buttonAngka" type="button" value="6" onclick="insert(6)"></td>
+            <td><input class ="buttonAngka" type="button" value="+" onclick="insert('+')"></td>  
+        </tr>
+        <tr>
+            <td><input class ="buttonAngka" type="button" value="1" onclick="insert(1)"></td>
+            <td><input class ="buttonAngka" type="button" value="2" onclick="insert(2)"></td>
+            <td><input class ="buttonAngka" type="button" value="3" onclick="insert(3)"></td>
+            <td rowspan=5><input class ="buttonClear" style="height:106" type="button" value="=" onclick="samadengan()"></td>
+        </tr>
+        <tr>
+            <td colspan=2><input class ="buttonAngka" style="width:106" type="button" value="0" onclick="insert(0)"></td>
+            <td><input class ="buttonAngka" type="button" value="." onclick="insert('.')"></td>
+        </tr>
+    </table>
+    </div>
+    </body>
+</html>
