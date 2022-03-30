@@ -1,0 +1,64 @@
+body {
+
+  margin: 180px 630px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  
+}
+
+.buttonAngka {
+  width: 50;
+  height: 50;
+  font-size: 25;
+  margin: 2;
+  cursor: pointer;
+  background: rgba(128, 128, 128, 0.5);
+  border: none;
+  outline: none;
+}
+
+.buttonAngka:hover {
+  background-color: rgba(128, 128, 128, 1);
+}
+
+.buttonClear {
+  width: 50;
+  height: 50;
+  font-size: 25;
+  margin: 2;
+  cursor: pointer;
+  background: rgba(255, 165, 0, 0.5);
+  border: none;
+  outline: none;
+}
+
+.buttonClear:hover {
+  background-color: rgba(255, 165, 0, 1);
+}
+
+.textview {
+  width: 217;
+  margin: 5;
+  font-size: 25;
+  padding: 5;
+  border: none;
+  color: black;
+  outline: none;
+  text-align: right;
+}
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+html {
+  background: linear-gradient(to right, #e91e63, #3f51b5);
+}

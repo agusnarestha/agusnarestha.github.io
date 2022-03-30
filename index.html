@@ -1,93 +1,9 @@
 <html>
 <head>
     <title>Simple Calculator</title>
-<style>
-    body{
-        background-color: rgba(0,0,0,0.6);
-        margin: 180px 630px;
-    }
-
-    *{
-        margin: 0;
-        padding: 0;
-        border-radius: 20px;
-    }
-
-    .buttonAngka{
-        width: 50;
-        height: 50;
-        font-size: 25;
-        margin: 2;
-        cursor: pointer;
-        background: rgba(128, 128, 128, 0.5);
-        border: none;
-        outline:none;
-    }
-
-    .buttonAngka:hover{
-        background-color: rgba(128, 128, 128, 1);
-    }
-
-    .buttonClear{
-        width: 50;
-        height: 50;
-        font-size: 25;
-        margin: 2;
-        cursor: pointer;
-        background: rgba(255, 165, 0, 0.5);
-        border: none;
-        outline:none;
-    }
-
-    .buttonClear:hover{
-        background-color: rgba(255, 165, 0, 1);
-    }
-
-    .textview{
-        width: 217;
-        margin: 5;
-        font-size: 25;
-        padding: 5;
-        border: none;
-        color: black;
-        outline:none;
-    }
-
-    .main{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-    }
-
-    html{
-        background: linear-gradient(to right, #e91e63, #3f51b5)
-    }
-
-</style>
-
-    <script>
-        function insert(bil){
-            document.form.textview.value = document.form.textview.value+bil
-        }
-
-        function samadengan(){
-            var bil = document.form.textview.value
-                if(bil){
-                    document.form.textview.value = eval(bil)
-                }
-        }
-
-        function bersihkan(){
-            document.form.textview.value = ""
-        }
-
-        function back(){
-            var bil = document.form.textview.value
-            document.form.textview.value = bil.substring(0,bil.length-1)
-        }
-    </script>
-
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
     <body>
         <div class="bg"></div>
@@ -99,7 +15,7 @@
         <tr>
             <td><input class ="buttonClear" type="button" value="C" onclick="bersihkan()"></td>
             <td><input class ="buttonAngka" type="button" value="/" onclick="insert('/')"></td>
-            <td><input class ="buttonAngka" type="button" value="X" onclick="insert('*')"></td>
+            <td><input class ="buttonAngka" type="button" value="×" onclick="insert('*')"></td>
             <td><input class ="buttonAngka" type="button" value="⌫" onclick="back()"></td>
         </tr>
         <tr>
